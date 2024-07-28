@@ -78,17 +78,9 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+import mongoengine
 
-MONGODB_DATABASES = {
-    'default': {
-        'NAME': 'university_management_django',
-        'HOST': 'localhost',
-        'PORT': 27017,
-        # 'USER': '',
-        # 'PASSWORD': '',
-    }
-}
-
+mongoengine.connect(host='mongodb://localhost:27017/university_management_django')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
